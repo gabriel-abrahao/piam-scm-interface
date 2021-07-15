@@ -1,0 +1,12 @@
+name: test-scm
+channels: 
+   - conda-forge
+dependencies:
+   - pandas
+   - numpy
+   - ipykernel
+   - jupyter
+   - pip
+   - pip:
+     - "--editable=git+https://github.com/gabriel-abrahao/pymagicc@pik-compatible#egg=pymagicc"
+
