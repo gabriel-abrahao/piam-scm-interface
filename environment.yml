@@ -7,6 +7,6 @@ dependencies:
    - ipykernel
    - jupyter
    - pip
-   - pip:
-     - "--editable=git+https://github.com/gabriel-abrahao/pymagicc@pik-compatible#egg=pymagicc"
+   # - pip:
+   #   - "--editable=git+https://github.com/gabriel-abrahao/pymagicc@pik-compatible#egg=pymagicc"
 
