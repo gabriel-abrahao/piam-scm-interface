@@ -22,15 +22,19 @@ import yaml
 import pymagicc
 import f90nml
 
-from gdxutils import *
-
+# Import the GAMS API
 # #TODO: Use low-level GDX libraries (gdxcc and its python wrapper)
-# instead of calling the GAMS API like done here. Also check the environment
-# for Python and GAMS versions/locations
-gamsapi_path = '/p/system/packages/gams/35.1.0/apifiles/Python/api_39'
+# instead of calling the GAMS API like done here.
+# The API is in a folder like '/p/system/packages/gams/35.1.0/apifiles/Python/api_39'
+gams_root = os.path.dirname(shutil.which("gams"))
+gamsapi_path = os.path.join(gams_root,"apifiles","Python","api_" + str(sys.version_info[0]) + str(sys.version_info[1]))
 sys.path.append(gamsapi_path)
 sys.path.append(os.path.dirname(gamsapi_path) + "/gams")
 from gams import *
+
+# Import other files after the GAMS API is in place
+from gdxutils import *
+
 #%%
 # with open(cfgpath, "r") as ymlfile:
     # cfg = yaml.safe_load(ymlfile)
