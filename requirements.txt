@@ -1,0 +1,12 @@
+wheel
+pandas<1.2,>=1.0.4
+numpy
+pint-pandas==0.1.0
+pycollocation
+pyam-iamc
+ipykernel
+jupyter
+gdxcc
+gdx2py     
+gdxpds
+--editable=git+https://github.com/gabriel-abrahao/pymagicc@pik-compatible#egg=pymagicc
