@@ -4,9 +4,14 @@ channels:
 dependencies:
    - pandas
    - numpy
+   - pint-pandas
+   - pyam
    - ipykernel
    - jupyter
    - pip
-   # - pip:
+   - pip:
+     - gdxcc
+     - gdx2py     
+     - gdxpds
    #   - "--editable=git+https://github.com/gabriel-abrahao/pymagicc@pik-compatible#egg=pymagicc"
 

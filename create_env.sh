@@ -2,6 +2,7 @@
 # This creates the conda environment in environment.yml and calls pip afterwards to install
 # pymagicc from a specific GitHub branch. This should be doable in the .yml but its not 
 # working at the time and that's probably not the way to go anyway.
+# It also creates symlinks to all GAMS libraries in the created conda environment
 
 newenvname='test-scm' # Hardcoded here, change if changed in environment.yml
 
@@ -52,3 +53,6 @@ else
     echo ""
     echo "ERROR: Conda env '$newenvname' not successfully created"
 fi
+
+# Link GDX libraries of the current GAMS setup #FIXME: There's got to be a smarter way, LD_LIBRARY_PATH is not working
+ln -s $(dirname $(which gams))/*.so $CONDA_PREFIX/lib/
