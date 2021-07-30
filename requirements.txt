@@ -1,9 +1,9 @@
-wheel
 pandas<1.2,>=1.0.4
 numpy
 pint-pandas==0.1.0
 pycollocation
 pyam-iamc
+pyreadr
 ipykernel
 jupyter
 gdxcc
