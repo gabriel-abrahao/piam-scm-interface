@@ -1,0 +1,282 @@
+title: testOneRegi
+regionmapping: config/regionmappingH12.csv
+revision: 6.161
+CESandGDXversion: bb8c8b606bd541440890368cf47d4323eb0fc519
+force_download: no
+force_replace: yes
+repositories:
+  /p/projects/rd3mod/inputdata/output: ~
+  /p/projects/remind/inputdata/CESparametersAndGDX: ~
+runstatistics: /p/projects/rd3mod/models/statistics/remind
+magicc_template: /p/projects/rd3mod/magicc/
+model_name: REMIND
+model_version: 2.2-dev
+gms:
+  macro: singleSectorGr
+  welfare: utilitarian
+  PE_FE_parameters: iea2014
+  initialCap: 'on'
+  aerosols: exoGAINS
+  climate: magicc
+  downscaleTemperature: 'off'
+  growth: exogenous
+  tax: 'on'
+  subsidizeLearning: 'off'
+  capitalMarket: debt_limit
+  trade: standard
+  agCosts: costs
+  CES_parameters: load
+  biomass: magpie_40
+  fossil: grades2poly
+  power: IntC
+  CDR: DAC
+  transport: complex
+  buildings: simple
+  industry: fixed_shares
+  stationary: 'off'
+  CCU: 'on'
+  techpol: none
+  emicapregi: none
+  banking: 'off'
+  carbonprice: none
+  regipol: none
+  damages: 'off'
+  internalizeDamages: 'off'
+  water: 'off'
+  optimization: testOneRegi
+  codePerformance: 'off'
+  cm_iteration_max: 1.0
+  c_solver_try_max: 2.0
+  c_keep_iteration_gdxes: 0.0
+  cm_nash_autoconverge: 1.0
+  cm_MAgPIE_coupling: 'off'
+  cm_emiscen: 1.0
+  cm_rcp_scen: none
+  cm_iterative_target_adj: 0.0
+  cm_co2_tax_2020: -1.0
+  cm_co2_tax_growth: 1.05
+  c_macscen: 1.0
+  cm_nucscen: 2.0
+  cm_ccapturescen: 1.0
+  c_bioliqscen: 1.0
+  c_bioh2scen: 1.0
+  c_shGreenH2: 0.0
+  c_shBioTrans: 1.0
+  cm_shSynTrans: 0.0
+  cm_shSynGas: 0.0
+  cm_IndCCSscen: 1.0
+  cm_optimisticMAC: 0.0
+  cm_CCS_cement: 1.0
+  cm_CCS_chemicals: 1.0
+  cm_CCS_steel: 1.0
+  cm_secondary_steel_bound: none
+  c_solscen: 1.0
+  cm_bioenergy_tax: 1.5
+  cm_bioenergymaxscen: 0.0
+  cm_tradecost_bio: 2.0
+  cm_LU_emi_scen: SSP2
+  cm_1stgen_phaseout: 0.0
+  cm_cprice_red_factor: 1.0
+  cm_POPscen: pop_SSP2
+  cm_GDPscen: gdp_SSP2
+  cm_GDPcovid: 0.0
+  cm_startyear: 2005.0
+  c_start_budget: 2100.0
+  cm_prtpScen: 3.0
+  cm_fetaxscen: 3.0
+  cm_multigasscen: 2.0
+  cm_permittradescen: 1.0
+  cm_limit_peur_scen: 1.0
+  cm_oil_scen: medOil
+  cm_gas_scen: medGas
+  cm_coal_scen: medCoal
+  cm_rentdiscoil: 0.2
+  cm_rentdiscoil2: 0.9
+  cm_rentconvoil: 50.0
+  cm_rentdiscgas: 0.6
+  cm_rentdiscgas2: 0.8
+  cm_rentconvgas: 50.0
+  cm_rentdisccoal: 0.4
+  cm_rentdisccoal2: 0.6
+  cm_rentconvcoal: 50.0
+  cm_earlyreti_rate: 0.09
+  c_cint_scen: 1.0
+  cm_so2tax_scen: 1.0
+  cm_damage: 0.005
+  cm_solwindenergyscen: 1.0
+  c_techAssumptScen: 1.0
+  c_ccsinjecratescen: 1.0
+  c_ccscapratescen: 1.0
+  c_export_tax_scen: 0.0
+  cm_gdximport_target: 0.0
+  c_SSP_forcing_adjust: forcing_SSP2
+  c_delayPolicy: SPA0
+  cm_gs_ew: 20.0
+  cm_LimRock: 1000.0
+  c_tau_so2_xmpt: 0.0
+  cm_expoLinear_yearStart: 2050.0
+  c_budgetCO2FFI: 1000.0
+  c_budgetCO2: 1350.0
+  c_abtrdy: 2010.0
+  c_abtcst: 1.0
+  cm_regiCO2target: 'off'
+  cm_postTargetIncrease: 2.0
+  cm_quantity_regiCO2target: 'off'
+  cm_emiMktETS: 'off'
+  cm_emiMktETS_type: 'off'
+  cm_ETS_postTargetIncrease: linear
+  cm_ETS_post2055Increase: 2.0
+  cm_emiMktES: 'off'
+  cm_emiMktES_type: netGHG
+  cm_ESD_postTargetIncrease: 8.0
+  cm_ESD_post2055Increase: 2.0
+  cm_emiMktEScoop: 'off'
+  cm_emiMktES2020price: 30.0
+  cm_emiMktES2050: 'off'
+  cm_NucRegiPol: 'off'
+  cm_CoalRegiPol: 'off'
+  cm_proNucRegiPol: 'off'
+  cm_CCSRegiPol: 'off'
+  cm_implicitFE: 'off'
+  cm_implFETarget: 2030.EUR_regi 1.26921
+  cm_implFEExoTax: 'off'
+  cm_vehiclesSubsidies: 'off'
+  c_CES_calibration_iterations: 10.0
+  c_CES_calibration_new_structure: 0.0
+  c_CES_calibration_write_prices: 0.0
+  cm_CES_calibration_default_prices: 0.0
+  cm_calibration_string: 'off'
+  c_testOneRegi_region: EUR
+  cm_DiscRateScen: 0.0
+  cm_noReboundEffect: 0.0
+  cm_esubGrowth: middle
+  cm_cooling_shares: static
+  cm_techcosts: REG
+  cm_trdcst: 1.5
+  cm_trdadj: 2.0
+  c_refcapbnd: 0.0
+  cm_frac_CCS: 10.0
+  cm_frac_NetNegEmi: 0.5
+  cm_regNetNegCO2: 'on'
+  cm_peakBudgYr: 2050.0
+  cm_taxCO2inc_after_peakBudgYr: 2.0
+  cm_CO2priceRegConvEndYr: 2050.0
+  c_regi_nucscen: all
+  c_regi_capturescen: all
+  c_regi_sensscen: all
+  cm_flex_tax: 0.0
+  cm_TaxConvCheck: 0.0
+  cm_EDGEtr_scen: ConvCase
+  cm_H2targets: 0.0
+  cm_PriceDurSlope_elh2: 20.0
+  cm_FlexTaxFeedback: 0.0
+  cm_build_H2costAddH2Inv: 0.2
+  cm_build_costDecayStart: 0.05
+  cm_build_H2costDecayEnd: 0.1
+  cm_indst_H2costAddH2Inv: 0.1
+  cm_indst_costDecayStart: 0.05
+  cm_indst_H2costDecayEnd: 0.1
+  cm_BioSupply_Adjust_EU: 3.0
+  cm_BioImportTax_EU: 1.0
+  cm_biotrade_phaseout: 0.0
+  cm_bioprod_histlim: -1.0
+  cm_import_EU: 'off'
+  cm_HeatLim_b: 1.0
+  cm_ElLim_b: 1.0
+  c_noPeFosCCDeu: 0.0
+  cm_demTcomplex: temporary_trend
+  cm_startIter_EDGET: 14.0
+  cm_altFeEmiFac: 'off'
+  cm_calibration_FE: 'off'
+  cm_INNOPATHS_eni: 'off'
+  cm_INNOPATHS_enb: 'off'
+  cm_INNOPATHS_LDV_mkt_share: 'off'
+  cm_INNOPATHS_incolearn: 'off'
+  cm_INNOPATHS_storageFactor: 'off'
+  cm_INNOPATHS_adj_seed: 'off'
+  cm_INNOPATHS_adj_seed_cont: 'off'
+  cm_INNOPATHS_adj_coeff: 'off'
+  cm_INNOPATHS_adj_coeff_cont: 'off'
+  cm_INNOPATHS_adj_seed_multiplier: 'off'
+  cm_INNOPATHS_adj_coeff_multiplier: 'off'
+  cm_INNOPATHS_inco0Factor: 'off'
+  cm_INNOPATHS_CCS_markup: 'off'
+  cm_INNOPATHS_Industry_CCS_markup: 'off'
+  cm_INNOPATHS_renewables_floor_cost: 'off'
+  cm_INNOPATHS_DAC_eff: 'off'
+  cm_INNOPATHS_sehe_upper: 'off'
+  cm_INNOPATHS_priceSensiBuild: -3.0
+  cm_INNOPATHS_pushCalib: none
+  cm_INNOPATHS_reducCostB: none
+  cm_INNOPATHS_effHP: 5.0
+  cm_logitCal_markup_conv_b: 0.8
+  cm_logitCal_markup_newtech_conv_b: 0.3
+  cm_feShareLimits: 'off'
+  cm_ARIADNE_FeShareBounds: 'off'
+  cm_seTradeScenario: 'off'
+  cm_ariadne_trade_el: 0.0
+  cm_ariadne_trade_h2: 0.0
+  cm_ariadne_trade_syn: 0.0
+  c_VREPot_Factor: 'off'
+  cm_SlowConvergence: 'off'
+  cm_nash_mode: parallel
+  cm_OILRETIRE: 'on'
+  cm_INCONV_PENALTY: 'on'
+  cm_INCONV_PENALTY_bioSwitch: 'off'
+  cm_so2_out_of_opt: 'on'
+  cm_MOFEX: 'off'
+  cm_less_TS: 'on'
+  c_skip_output: 'off'
+  cm_ccsfosall: 'off'
+  cm_APscen: SSP2
+  cm_Full_Integration: 'off'
+  c_CO2priceDependent_AdjCosts: 'on'
+  c_scaleEmiHistorical: 'on'
+  cm_magicc_calibrateTemperature2000: uncalibrated
+  cm_magicc_config: OLDDEFAULT
+  cm_magicc_temperatureImpulseResponse: 'off'
+  cm_carbonprice_temperatureLimit: 1.8
+  cm_damage_DiceLike_specification: HowardNonCatastrophic
+  cm_damages_BurkeLike_specification: 0.0
+  cm_damages_BurkeLike_persistenceTime: 30.0
+  cm_damages_SccHorizon: 100.0
+  cm_conoptv: conopt3
+  c_fuelprice_init: 'off'
+  c_GDPpcScen: SSP2
+  cm_CES_configuration: stat_off-indu_fixed_shares-buil_simple-tran_complex-POP_pop_SSP2-GDP_gdp_SSP2-Kap_debt_limit-Reg_62eff8f7
+  c_expname: testOneRegi
+gamsv: gams
+action: ce
+tarball_puts: 'on'
+slurmConfig: --qos=priority --nodes=1 --tasks-per-node=1
+logoption: 2.0
+output: .na
+results_folder: output/testOneRegi
+files2export:
+  start:
+  - config/conopt3.opt
+  - config/conopt3.op2
+  - config/conopt3.op3
+  - config/conopt3.op9
+  - core/input/historical/historical.mif
+  - scripts/input/exoGAINSAirpollutants.R
+  - scripts/iterative/EDGE_transport.R
+  - core/magicc
+  - core/magicc/run_magicc.R
+  - core/magicc/run_magicc_temperatureImpulseResponse.R
+  - core/magicc/read_DAT_TOTAL_ANTHRO_RF.R
+  - core/magicc/read_DAT_SURFACE_TEMP.R
+  - .Rprofile
+  - config/mappingEDGEtoREMINDsectors.csv
+  - modules/11_aerosols/exoGAINS/input/ef_gains.cs4r
+  - modules/11_aerosols/exoGAINS/input/emi_gains.cs4r
+  - modules/11_aerosols/exoGAINS/input/mappingGAINSmixedtoREMIND17activities.csv
+  - modules/11_aerosols/exoGAINS/input/mappingGAINStoREMINDsectors.csv
+  - modules/35_transport/edge_esm/input/EDGEscenario_description.csv
+  - modules/35_transport/edge_esm/input/mapping_CESnodes_EDGE.csv
+  - modules/35_transport/edge_esm/input/mapping_EDGE_REMIND_transport_categories.csv
+converted_input_folder: config
+subsequentruns: []
+RunsUsingTHISgdxAsBAU: .na
+remind_folder: /home/abrahao/testing/remind
+model: main.gms
