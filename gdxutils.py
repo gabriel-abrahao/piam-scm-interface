@@ -16,22 +16,21 @@ sys.path.append(os.path.dirname(gamsapi_path) + "/gams")
 from gams import *
 
 
-def write_gdx_parameter_from_dict(vargamsname, vardict, gamssetname, outfname, vartext = ""):
-    """Writes a dict as a single parameter in a new GDX file
 
-    Parameters
-    ----------
-    vargamsname: str
-        GAMS name of the variable
-    vardict: dict
-        Dictionary containing the values. The keys define a new Set called gamssetname.
-    gamssetname: str
-        Name of the GAMS Set that will be built from vardict's keys
-    outfname: str
-        output GDX file name
-    vartext: str, default=""
-        Optional string describing the variable. 'Explanatory text' in the GAMS documentation.
-    """
+
+# TODO: Define functions in another file
+# Writes a dict as a single parameter in a new GDX file
+# vargamsname:
+#   GAMS name of the variable
+# vardict:
+#   dictionary with the values. The keys define a new Set called gamssetname
+# vartext:
+#   explanatory text (optional)
+# gamssetname:
+#   name of the GAMS Set that will be built from vardict's keys
+# outfname:
+#   output GDX file name
+def write_gdx_parameter_from_dict(vargamsname, vardict, gamssetname, outfname, vartext = ""):
     # Start GAMS. The working directory is not the same as python's
     ws = GamsWorkspace()
 
@@ -51,49 +50,35 @@ def write_gdx_parameter_from_dict(vargamsname, vardict, gamssetname, outfname, v
     gdxdb.export(outfname)
     return(None)
 
+# Gets a year:value dict for a variable from a pymagicc run
+# results:
+#   The pymagicc model object after being run
+# varname:
+#   The IAMC variable name (e.g. 'Surface Temperature')
+# region:
+#   Region to extract, defaults to 'World'
+# TODO: Include units check/conversion using the pint backend. 
+# REMIND expects the same units as IAMC for surface temperature (K) and radiative forcing (W m-2)
 def get_variable_dict(results, varname, region = "World"):
-    """Gets a year:value dict for a variable from a pymagicc run.
-    TODO: Include units check/conversion using the pint backend. 
-    REMIND expects the same units as IAMC for surface temperature (K) and radiative forcing (W m-2).
-
-    Parameters
-    ----------
-    results: scmdata.ScmRun
-        Results from a successfully finished SCM run
-    varname: str
-        Name of the variable to get
-    region: str, default="World"
-        Region from which to get the variable. Defaults to "World"
-    Return
-    ------
-    vardict: dict
-        Dictionary containing year:value pairs of variable `varname` from `results` on `region`
-    """
     vardf = results.filter(region = region, variable = varname).to_iamdataframe().swap_time_for_year().as_pandas()
     vardf = vardf[["year","value"]]
     vardict = vardf.set_index("year").to_dict()["value"]
     return(vardict)
 
+# Writes a dict as a single parameter in a new GDX file
+# vargamsname:
+#   GAMS name of the variable
+# results:
+#   The pymagicc model object after being run
+# gamssetname:
+#   name of the GAMS Set that will be built from vardict's keys
+# outfname:
+#   output GDX file name
+# varname:
+#   The IAMC variable name (e.g. 'Surface Temperature')
+# region:
+#   Region to extract, defaults to 'World'
 def write_gdx_parameter_from_results(varname, vargamsname, results, gamssetname, outfname, region = "World"):
-    """Writes a variable from a single region taken from a scmdata.ScmRun object
-     as a single parameter in a new GDX file
-
-    Parameters
-    ----------
-    varname: str
-        Name of the variable to get in `results`
-    vargamsname: str
-        GAMS name to give the variable
-    results: scmdata.ScmRun
-        Results from a successfully finished SCM run
-    gamssetname: str
-        Name to give the GAMS Set that will be built from the years
-    outfname: str
-        output GDX file name
-    region: str, default="World"
-        Region from which to get the variable. Defaults to "World"
-    """
     vardict = get_variable_dict(results, varname, region = region)
-    # Use the variable's long name in results as explanatory text
     write_gdx_parameter_from_dict(vargamsname, vardict, gamssetname, outfname, vartext = varname)
     return(None)
