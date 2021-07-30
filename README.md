@@ -6,7 +6,7 @@ This repository is supposed to be independent of the model, with its path and an
 Currently this only works for calling MAGICC6 from REMIND. The only advantage over the current (July 2021) REMIND MAGICC implementation is the output of all the SCM's variables instead of just the ones used in the REMIND loop. In the near future, the interface should work transparently with other versions of MAGICC and other SCMs such as FAIR using [openscm-runner](https://github.com/openscm/openscm-runner).
 
 ## Setting up the environment
-The easisest way to set up an environment to use this interface is running `create_env.sh`. It generates a venv in the `venv_scm` folder using `pip` and the contents of `requirements.txt`. 
+The simplest way to set up an environment to use this interface is running `create_env.sh`. It just generates a venv in the `venv_scm` folder using `pip` and the contents of `requirements.txt`. 
 
     ./create_env.sh
 
@@ -31,13 +31,13 @@ Values set in the branch currently point to locations in `/p/projects/piam/abrah
 To use it, just set the 15_climate module to the `openscm` realization in any run. It should work just like using the `magicc` realization for now, with the addition of writing the full MAGICC output to a `scm_output.csv` in the run folder.
 
 ## Desired improvements
- - [ ] MAGICC6 support via [pymagicc](https://github.com/openscm/pymagicc)
- - [ ] Export all common SCM output in a CSV
- - [ ] Include this output in the REMIND reporting workflow
- - [ ] Expand output to include optional variables such as carbon stocks
+ - [x] MAGICC6 support via [pymagicc](https://github.com/openscm/pymagicc)
+ - [x] Export all common SCM output in a CSV/RDS
+   - [ ] Include this output in the REMIND reporting workflow
+   - [ ] Expand output to include optional variables such as carbon stocks
  - [ ] Move most of the code in the run script into a class to make changes in its behavior via `cfg.txt` more organized
  - [ ] Switch core run to [openscm-runner](https://github.com/openscm/openscm-runner)
- - [ ] FAIR model support
- - [ ] MAGICC7 model support (depends on access to its binary)
+   - [ ] FAIR model support
+   - [ ] MAGICC7 model support (depends on access to its binary)
  - [ ] Support for running a batch of runs to estimate a Temperature Impulse Response function (TIRF)
  - [ ] Support for statistical runs (depends on extra tuning files)
