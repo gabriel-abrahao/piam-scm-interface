@@ -34,7 +34,8 @@ To use it, just set the 15_climate module to the `openscm` realization in any ru
  - [x] MAGICC6 support via [pymagicc](https://github.com/openscm/pymagicc)
  - [x] Export all common SCM output in a CSV/RDS
    - [ ] Include this output in the REMIND reporting workflow
-   - [ ] Expand output to include optional variables such as carbon stocks
+   - [ ] Expand output to include optional variables such as carbon stocks (problematic because MAGICC6 doesn't report units in that output file)
+ - [ ] Support changing configuration files via `cm_magicc_config`
  - [ ] Move most of the code in the run script into a class to make changes in its behavior via `cfg.txt` more organized
  - [ ] Switch core run to [openscm-runner](https://github.com/openscm/openscm-runner)
    - [ ] FAIR model support
